@@ -15,6 +15,7 @@ local credits = Instance.new("TextLabel")
 local _1000 = Instance.new("TextButton")
 local TextLabel = Instance.new("TextLabel")
 local AntiAFK = Instance.new("TextButton")
+local stop = Instance.new("TextButton")
 
 --Properties:
 
@@ -42,7 +43,7 @@ _50.Name = "50"
 _50.Parent = main
 _50.BackgroundColor3 = Color3.fromRGB(185, 185, 185)
 _50.BorderColor3 = Color3.fromRGB(0, 0, 0)
-_50.Position = UDim2.new(0, 0, 0.234130397, 0)
+_50.Position = UDim2.new(0.0364238396, 0, 0.234130397, 0)
 _50.Size = UDim2.new(0, 68, 0, 25)
 _50.Font = Enum.Font.SourceSans
 _50.Text = "50"
@@ -60,7 +61,7 @@ end)
 _100.Name = "100"
 _100.Parent = main
 _100.BackgroundColor3 = Color3.fromRGB(185, 185, 185)
-_100.Position = UDim2.new(0.384839594, 0, 0.234130397, 0)
+_100.Position = UDim2.new(0.388150841, 0, 0.234130397, 0)
 _100.Size = UDim2.new(0, 68, 0, 25)
 _100.Font = Enum.Font.SourceSans
 _100.Text = "100"
@@ -78,7 +79,7 @@ end)
 _200.Name = "200"
 _200.Parent = main
 _200.BackgroundColor3 = Color3.fromRGB(185, 185, 185)
-_200.Position = UDim2.new(0.766763866, 0, 0.234130397, 0)
+_200.Position = UDim2.new(0.723717511, 0, 0.234130397, 0)
 _200.Size = UDim2.new(0, 70, 0, 25)
 _200.Font = Enum.Font.SourceSans
 _200.Text = "200"
@@ -96,7 +97,7 @@ end)
 _500.Name = "500"
 _500.Parent = main
 _500.BackgroundColor3 = Color3.fromRGB(185, 185, 185)
-_500.Position = UDim2.new(0, 0, 0.439478487, 0)
+_500.Position = UDim2.new(0.0364238396, 0, 0.434503376, 0)
 _500.Size = UDim2.new(0, 68, 0, 25)
 _500.Font = Enum.Font.SourceSans
 _500.Text = "500"
@@ -114,7 +115,7 @@ end)
 _2000.Name = "2000"
 _2000.Parent = main
 _2000.BackgroundColor3 = Color3.fromRGB(185, 185, 185)
-_2000.Position = UDim2.new(0.769679308, 0, 0.439478487, 0)
+_2000.Position = UDim2.new(0.723321676, 0, 0.439478487, 0)
 _2000.Size = UDim2.new(0, 69, 0, 24)
 _2000.Font = Enum.Font.SourceSans
 _2000.Text = "2000"
@@ -132,7 +133,7 @@ end)
 _5000.Name = "5000"
 _5000.Parent = main
 _5000.BackgroundColor3 = Color3.fromRGB(185, 185, 185)
-_5000.Position = UDim2.new(0, 0, 0.632004917, 0)
+_5000.Position = UDim2.new(0.0364238396, 0, 0.632004917, 0)
 _5000.Size = UDim2.new(0, 68, 0, 25)
 _5000.Font = Enum.Font.SourceSans
 _5000.Text = "5000"
@@ -165,11 +166,10 @@ _10000.MouseButton1Down:connect(function()
 	end
 end)
 
-
 _20000.Name = "20000"
 _20000.Parent = main
 _20000.BackgroundColor3 = Color3.fromRGB(185, 185, 185)
-_20000.Position = UDim2.new(0.77259475, 0, 0.632004917, 0)
+_20000.Position = UDim2.new(0.726237118, 0, 0.632004917, 0)
 _20000.Size = UDim2.new(0, 68, 0, 25)
 _20000.Font = Enum.Font.SourceSans
 _20000.Text = "20000"
@@ -198,7 +198,7 @@ credits.TextSize = 14.000
 _1000.Name = "1000"
 _1000.Parent = main
 _1000.BackgroundColor3 = Color3.fromRGB(185, 185, 185)
-_1000.Position = UDim2.new(0.384839594, 0, 0.439478487, 0)
+_1000.Position = UDim2.new(0.388150841, 0, 0.439478487, 0)
 _1000.Size = UDim2.new(0, 68, 0, 24)
 _1000.Font = Enum.Font.SourceSans
 _1000.Text = "1000"
@@ -220,7 +220,7 @@ TextLabel.BorderColor3 = Color3.fromRGB(66, 66, 66)
 TextLabel.Position = UDim2.new(0.00331125828, 0, 0.787737191, 0)
 TextLabel.Size = UDim2.new(0, 301, 0, 18)
 TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "注意：此脚本一旦启动就不可停止，如需更换金额请重启游戏"
+TextLabel.Text = "此脚本仍处于BETA，仅供学习交流"
 TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.TextSize = 14.000
 
@@ -233,11 +233,14 @@ AntiAFK.Font = Enum.Font.SourceSans
 AntiAFK.Text = "AntiAFK"
 AntiAFK.TextColor3 = Color3.fromRGB(0, 0, 0)
 AntiAFK.TextSize = 14.000
-AntiAFK.MouseButton1Down:connect(function()
-	local vu = game:GetService("VirtualUser")
-	game:GetService("Players").LocalPlayer.Idled:connect(function()
-		vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-		wait(1)
-		vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-	end)
-end)
+
+stop.Name = "stop"
+stop.Parent = main
+stop.BackgroundColor3 = Color3.fromRGB(185, 185, 185)
+stop.Position = UDim2.new(0.00331125828, 0, 0.877289414, 0)
+stop.Size = UDim2.new(0, 51, 0, 26)
+stop.Font = Enum.Font.SourceSans
+stop.Text = "停止 "
+stop.TextColor3 = Color3.fromRGB(0, 0, 0)
+stop.TextSize = 14.000
+
